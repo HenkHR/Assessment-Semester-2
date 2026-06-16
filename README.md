@@ -1,21 +1,36 @@
-# React + TypeScript + Vite + shadcn/ui
+# Assessment Semester 2
 
-This is a template for a new Vite project with React, TypeScript, and shadcn/ui.
+A React app scaffolded with Vite, [shadcn/ui](https://ui.shadcn.com), Tailwind CSS v4, and Framer Motion.
 
-## Adding components
+## Stack
 
-To add components to your app, run the following command:
+- **React 19** + **Vite 8** — fast dev server and production builds
+- **shadcn/ui** (base-nova) — accessible UI components (`button`, `card`)
+- **Tailwind CSS v4** — utility-first styling with semantic design tokens
+- **Framer Motion** — entrance animations with reduced-motion support
+
+## Getting started
+
+Install dependencies:
 
 ```bash
-npx shadcn@latest add button
+npm install
 ```
 
-This will place the ui components in the `src/components` directory.
+Run the dev server:
 
-## Using components
+```bash
+npm run dev
+```
 
-To use the components in your app, import them as follows:
+Build for production:
 
-```tsx
-import { Button } from "@/components/ui/button"
+```bash
+npm run build
+```
+
+Preview the production build:
+
+```bash
+npm run preview
 ```
