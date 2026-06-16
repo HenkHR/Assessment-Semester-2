@@ -1,41 +1,20 @@
-import { AnimatedContainer } from "@/components/animated-container"
-import { Button } from "@/components/ui/button"
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
+import { Navbar } from "@/components/layout/navbar"
+import { SectionHeading } from "@/components/layout/section-heading"
+import { SectionShell } from "@/components/layout/section-shell"
+import { NAV_ITEMS } from "@/content"
 
 export function App() {
   return (
-    <main className="flex min-h-svh items-center justify-center bg-background p-6">
-      <AnimatedContainer className="w-full max-w-lg">
-        <Card>
-          <CardHeader>
-            <CardTitle>Welcome</CardTitle>
-            <CardDescription>
-              React, Vite, shadcn/ui, Tailwind CSS, and Framer Motion — ready
-              to go.
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <p className="text-muted-foreground">
-              This hero card fades in on load. Press{" "}
-              <kbd className="rounded border bg-muted px-1.5 py-0.5 font-mono text-xs">
-                d
-              </kbd>{" "}
-              to toggle dark mode.
-            </p>
-          </CardContent>
-          <CardFooter>
-            <Button>Get Started</Button>
-          </CardFooter>
-        </Card>
-      </AnimatedContainer>
-    </main>
+    <>
+      <Navbar />
+      <main>
+        {NAV_ITEMS.map(({ id, label }) => (
+          <SectionShell key={id} id={id} className="min-h-[80vh]">
+            <SectionHeading>{label}</SectionHeading>
+          </SectionShell>
+        ))}
+      </main>
+    </>
   )
 }
 
