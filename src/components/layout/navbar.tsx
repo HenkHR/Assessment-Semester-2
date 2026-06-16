@@ -1,3 +1,4 @@
+import { LayoutGroup, motion } from "framer-motion"
 import { Menu } from "lucide-react"
 import { useState } from "react"
 
@@ -15,6 +16,7 @@ import { NAV_ITEMS, SECTION_IDS } from "@/content"
 import type { SectionId } from "@/content/types"
 import { useScrollSpy } from "@/hooks/use-scroll-spy"
 import { useScrollTo } from "@/hooks/use-scroll-to"
+import { springTransition } from "@/lib/motion"
 import { cn } from "@/lib/utils"
 
 interface NavLinkProps {
@@ -32,14 +34,19 @@ function NavLink({ id, label, isActive, onClick, className }: NavLinkProps) {
       onClick={() => onClick(id)}
       aria-current={isActive ? "true" : undefined}
       className={cn(
-        "font-medium transition-colors",
-        isActive
-          ? "border-b-2 border-primary pb-0.5 text-primary"
-          : "text-muted-foreground hover:text-foreground",
+        "relative pb-0.5 font-medium transition-colors",
+        isActive ? "text-primary" : "text-muted-foreground hover:text-foreground",
         className,
       )}
     >
-      {label}
+      {isActive ? (
+        <motion.span
+          layoutId="nav-underline"
+          className="absolute right-0 -bottom-px left-0 h-0.5 bg-primary"
+          transition={springTransition}
+        />
+      ) : null}
+      <span className="relative z-10">{label}</span>
     </button>
   )
 }
@@ -75,18 +82,20 @@ export function Navbar() {
           </button>
         </AnimatedContainer>
 
-        <ul className="hidden items-center gap-8 md:flex">
-          {NAV_ITEMS.map(({ id, label }) => (
-            <li key={id}>
-              <NavLink
-                id={id}
-                label={label}
-                isActive={activeId === id}
-                onClick={scrollTo}
-              />
-            </li>
-          ))}
-        </ul>
+        <LayoutGroup>
+          <ul className="hidden items-center gap-8 md:flex">
+            {NAV_ITEMS.map(({ id, label }) => (
+              <li key={id}>
+                <NavLink
+                  id={id}
+                  label={label}
+                  isActive={activeId === id}
+                  onClick={scrollTo}
+                />
+              </li>
+            ))}
+          </ul>
+        </LayoutGroup>
 
         <Sheet open={sheetOpen} onOpenChange={setSheetOpen}>
           <SheetTrigger

@@ -1,7 +1,12 @@
 import { MethodCard } from "@/components/cards/method-card"
 import { SectionHeading } from "@/components/layout/section-heading"
 import { SectionShell } from "@/components/layout/section-shell"
+import { ScrollReveal } from "@/components/motion/scroll-reveal"
 import { SignatureElement } from "@/components/motion/signature-element"
+import {
+  StaggerChildren,
+  StaggerItem,
+} from "@/components/motion/stagger-children"
 import { EMPTY_METHOD } from "@/content"
 import type { MethodData } from "@/content/types"
 
@@ -19,21 +24,27 @@ export function MethodsSection({ methods }: MethodsSectionProps) {
     <SectionShell id="methoden">
       <SignatureElement index={2} />
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <SectionHeading className="mb-12">Toolkit</SectionHeading>
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-          <MethodCard
-            title={method1.title}
-            description={method1.description}
-            pros={method1.pros}
-            cons={method1.cons}
-          />
-          <MethodCard
-            title={method2.title}
-            description={method2.description}
-            pros={method2.pros}
-            cons={method2.cons}
-          />
-        </div>
+        <ScrollReveal>
+          <SectionHeading className="mb-12">Toolkit</SectionHeading>
+        </ScrollReveal>
+        <StaggerChildren className="grid grid-cols-1 gap-8 md:grid-cols-2">
+          <StaggerItem>
+            <MethodCard
+              title={method1.title}
+              description={method1.description}
+              pros={method1.pros}
+              cons={method1.cons}
+            />
+          </StaggerItem>
+          <StaggerItem>
+            <MethodCard
+              title={method2.title}
+              description={method2.description}
+              pros={method2.pros}
+              cons={method2.cons}
+            />
+          </StaggerItem>
+        </StaggerChildren>
       </div>
     </SectionShell>
   )
