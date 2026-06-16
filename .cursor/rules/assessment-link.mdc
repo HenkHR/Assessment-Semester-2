@@ -1,0 +1,12 @@
+---
+description: Linked assessment project for read/reference access
+alwaysApply: true
+---
+
+# Linked Assessment Project
+
+This workspace includes a junction at `assessment/` pointing to the sibling project:
+
+`c:\Users\henk-\Development\assessment`
+
+Use `assessment/**` paths to read, search, and reference that codebase from this workspace. Treat it as a separate project unless the user asks to modify it.
