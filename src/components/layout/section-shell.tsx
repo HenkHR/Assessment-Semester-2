@@ -14,8 +14,8 @@ export function SectionShell({ id, children, className }: SectionShellProps) {
     <section
       id={id}
       className={cn(
-        "scroll-mt-[4.5rem] px-6 py-16",
-        id === "over-mij" && "pt-24",
+        "relative scroll-mt-[4.5rem] py-16",
+        id === "over-mij" && "pt-24 pb-16",
         className,
       )}
     >
