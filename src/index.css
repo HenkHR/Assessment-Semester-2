@@ -1,13 +1,28 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
-@import "@fontsource-variable/geist";
+
+/* Signal Lab typography — single import block to avoid FOUT */
+@import "@fontsource/space-grotesk/400.css";
+@import "@fontsource/space-grotesk/500.css";
+@import "@fontsource/space-grotesk/600.css";
+@import "@fontsource/space-grotesk/700.css";
+@import "@fontsource/ibm-plex-sans/400.css";
+@import "@fontsource/ibm-plex-sans/500.css";
+@import "@fontsource/ibm-plex-mono/400.css";
+@import "@fontsource/ibm-plex-mono/500.css";
 
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-    --font-heading: var(--font-sans);
-    --font-sans: 'Geist Variable', sans-serif;
+    --font-sans: "IBM Plex Sans", sans-serif;
+    --font-heading: "Space Grotesk", sans-serif;
+    --font-mono: "IBM Plex Mono", monospace;
+    --color-pros: var(--accent);
+    --color-cons: var(--destructive);
+    --color-section-alt: var(--muted);
+    --section-py: 4rem;
+    --navbar-h: 4rem;
     --color-sidebar-ring: var(--sidebar-ring);
     --color-sidebar-border: var(--sidebar-border);
     --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -48,83 +63,197 @@
     --radius-4xl: calc(var(--radius) * 2.6);
 }
 
-:root {
-    --background: oklch(1 0 0);
-    --foreground: oklch(0.145 0 0);
-    --card: oklch(1 0 0);
-    --card-foreground: oklch(0.145 0 0);
-    --popover: oklch(1 0 0);
-    --popover-foreground: oklch(0.145 0 0);
-    --primary: oklch(0.205 0 0);
-    --primary-foreground: oklch(0.985 0 0);
-    --secondary: oklch(0.97 0 0);
-    --secondary-foreground: oklch(0.205 0 0);
-    --muted: oklch(0.97 0 0);
-    --muted-foreground: oklch(0.556 0 0);
-    --accent: oklch(0.97 0 0);
-    --accent-foreground: oklch(0.205 0 0);
-    --destructive: oklch(0.577 0.245 27.325);
-    --border: oklch(0.922 0 0);
-    --input: oklch(0.922 0 0);
-    --ring: oklch(0.708 0 0);
-    --chart-1: oklch(0.87 0 0);
-    --chart-2: oklch(0.556 0 0);
-    --chart-3: oklch(0.439 0 0);
-    --chart-4: oklch(0.371 0 0);
-    --chart-5: oklch(0.269 0 0);
-    --radius: 0.625rem;
-    --sidebar: oklch(0.985 0 0);
-    --sidebar-foreground: oklch(0.145 0 0);
-    --sidebar-primary: oklch(0.205 0 0);
-    --sidebar-primary-foreground: oklch(0.985 0 0);
-    --sidebar-accent: oklch(0.97 0 0);
-    --sidebar-accent-foreground: oklch(0.205 0 0);
-    --sidebar-border: oklch(0.922 0 0);
-    --sidebar-ring: oklch(0.708 0 0);
-}
-
+/* Dark-only palette — :root mirrors .dark so tokens resolve before hydration */
+:root,
 .dark {
-    --background: oklch(0.145 0 0);
-    --foreground: oklch(0.985 0 0);
-    --card: oklch(0.205 0 0);
-    --card-foreground: oklch(0.985 0 0);
-    --popover: oklch(0.205 0 0);
-    --popover-foreground: oklch(0.985 0 0);
-    --primary: oklch(0.922 0 0);
-    --primary-foreground: oklch(0.205 0 0);
-    --secondary: oklch(0.269 0 0);
-    --secondary-foreground: oklch(0.985 0 0);
-    --muted: oklch(0.269 0 0);
-    --muted-foreground: oklch(0.708 0 0);
-    --accent: oklch(0.269 0 0);
-    --accent-foreground: oklch(0.985 0 0);
-    --destructive: oklch(0.704 0.191 22.216);
-    --border: oklch(1 0 0 / 10%);
-    --input: oklch(1 0 0 / 15%);
-    --ring: oklch(0.556 0 0);
-    --chart-1: oklch(0.87 0 0);
-    --chart-2: oklch(0.556 0 0);
-    --chart-3: oklch(0.439 0 0);
-    --chart-4: oklch(0.371 0 0);
-    --chart-5: oklch(0.269 0 0);
-    --sidebar: oklch(0.205 0 0);
-    --sidebar-foreground: oklch(0.985 0 0);
-    --sidebar-primary: oklch(0.488 0.243 264.376);
-    --sidebar-primary-foreground: oklch(0.985 0 0);
-    --sidebar-accent: oklch(0.269 0 0);
-    --sidebar-accent-foreground: oklch(0.985 0 0);
-    --sidebar-border: oklch(1 0 0 / 10%);
-    --sidebar-ring: oklch(0.556 0 0);
+    --background: oklch(0.14 0.02 250);
+    --foreground: oklch(0.93 0.01 250);
+    --card: oklch(0.17 0.02 250);
+    --card-foreground: oklch(0.93 0.01 250);
+    --popover: oklch(0.17 0.02 250);
+    --popover-foreground: oklch(0.93 0.01 250);
+    --primary: oklch(0.72 0.16 250);
+    --primary-foreground: oklch(0.14 0.02 250);
+    --secondary: oklch(0.2 0.02 250);
+    --secondary-foreground: oklch(0.93 0.01 250);
+    --muted: oklch(0.22 0.02 250);
+    --muted-foreground: oklch(0.68 0.02 250);
+    --accent: oklch(0.22 0.04 180);
+    --accent-foreground: oklch(0.85 0.06 180);
+    --destructive: oklch(0.65 0.15 55);
+    --border: oklch(0.72 0.16 250 / 12%);
+    --input: oklch(0.72 0.16 250 / 15%);
+    --ring: oklch(0.72 0.16 250 / 45%);
+    --chart-1: oklch(0.72 0.16 250);
+    --chart-2: oklch(0.65 0.12 200);
+    --chart-3: oklch(0.58 0.1 180);
+    --chart-4: oklch(0.5 0.08 260);
+    --chart-5: oklch(0.42 0.06 280);
+    --radius: 0.375rem;
+    --sidebar: oklch(0.17 0.02 250);
+    --sidebar-foreground: oklch(0.93 0.01 250);
+    --sidebar-primary: oklch(0.72 0.16 250);
+    --sidebar-primary-foreground: oklch(0.14 0.02 250);
+    --sidebar-accent: oklch(0.22 0.04 180);
+    --sidebar-accent-foreground: oklch(0.85 0.06 180);
+    --sidebar-border: oklch(0.72 0.16 250 / 12%);
+    --sidebar-ring: oklch(0.72 0.16 250 / 45%);
 }
 
 @layer base {
-  * {
-    @apply border-border outline-ring/50;
+    * {
+        @apply border-border outline-ring/50;
     }
-  body {
-    @apply bg-background text-foreground;
+
+    html {
+        @apply font-sans;
+        scroll-behavior: smooth;
     }
-  html {
-    @apply font-sans;
+
+    @media (prefers-reduced-motion: reduce) {
+        html {
+            scroll-behavior: auto;
+        }
+    }
+
+    body {
+        @apply bg-background text-foreground;
+        background-image:
+            linear-gradient(oklch(0.72 0.16 250 / 3%) 1px, transparent 1px),
+            linear-gradient(90deg, oklch(0.72 0.16 250 / 3%) 1px, transparent 1px);
+        background-size: 3rem 3rem;
+        background-attachment: fixed;
+    }
+
+    [data-slot="card"] {
+        border: 1px solid var(--border);
+        transition:
+            border-color 0.2s ease,
+            box-shadow 0.2s ease;
+    }
+
+    [data-slot="card"]:hover {
+        border-color: oklch(0.72 0.16 250 / 35%);
+        box-shadow:
+            0 0 1.25rem oklch(0.72 0.16 250 / 8%),
+            inset 0 1px 0 oklch(0.72 0.16 250 / 6%);
+    }
+}
+
+@layer utilities {
+    .heading-display {
+        font-family: var(--font-heading);
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        line-height: 1.1;
+    }
+
+    .text-label {
+        font-family: var(--font-mono);
+        font-size: 0.75rem;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+    }
+}
+
+/* Signature element — monospace section index with scan line */
+.signature-index {
+    pointer-events: none;
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 1px solid oklch(0.72 0.16 250 / 20%);
+    background: oklch(0.14 0.02 250 / 85%);
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    font-weight: 500;
+    color: oklch(0.72 0.16 250 / 55%);
+    user-select: none;
+}
+
+.signature-index__digits {
+    position: relative;
+    z-index: 1;
+    letter-spacing: 0.1em;
+}
+
+.signature-index__scan {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 1px;
+    background: oklch(0.72 0.16 250 / 80%);
+    box-shadow: 0 0 6px oklch(0.72 0.16 250 / 60%);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .signature-index__scan {
+        animation: signature-scan 3.5s ease-in-out infinite;
+    }
+}
+
+@keyframes signature-scan {
+    0% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+
+    8% {
+        opacity: 1;
+    }
+
+    92% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(2.5rem);
+        opacity: 0;
+    }
+}
+
+@media (min-width: 768px) {
+    .signature-index {
+        top: 50%;
+        left: 0;
+        width: 2rem;
+        height: 5rem;
+        transform: translateY(-50%);
+    }
+
+    .signature-index__digits {
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+        letter-spacing: 0.14em;
+    }
+
+    @keyframes signature-scan {
+        0% {
+            transform: translateY(0);
+            opacity: 0;
+        }
+
+        8% {
+            opacity: 1;
+        }
+
+        92% {
+            opacity: 1;
+        }
+
+        100% {
+            transform: translateY(5rem);
+            opacity: 0;
+        }
     }
 }
