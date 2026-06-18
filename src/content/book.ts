@@ -1,12 +1,12 @@
 import type { BookData } from "./types"
 
 export const bookData: BookData = {
-  imageSrc: "/placeholder-book.svg",
-  imageAlt: "Boekomslag (placeholder)",
-  title: "Boektitel (placeholder)",
-  about: "[Placeholder] Korte samenvatting van het boek...",
-  learned: "[Placeholder] Wat heb je geleerd van dit boek...",
-  applied: "[Placeholder] Hoe heb je dit toegepast in projecten...",
+  imageSrc: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVQ59tpciKUZuYGHhXgrZ_40jSbDHslg0aby39h7gVyA&s=10",
+  imageAlt: "Boekomslag Homo Deus",
+  title: "Homo Deus",
+  about: "Homo Deus is een boek over de toekomst van de mensheid en de gevolgen van technologische ontwikkelingen. Er wordt beschreven hoe wij van overleven naar overheersen zijn gaan. De primaire vormer van vooruitgang is niet meer de natuur (evolutie, rampen, etc.) maar de mens zelf. Wij zijn steeds meer gaan streven om meer te zijn als een soort god die alles bestuurd en begrijpt. Uiteindlijk wordt er beargumenteerd dat wij door onze kennis van de wereld onze betekenis zijn verloren, doordat wij alle problemen hebben opgelost of nu begrijpen, missen wij de voldoening en betekenis die deze dingen ons gaven. De schrijver benoemd dan dat de mens nu zijn eigen betekenis moet vinden of maken. dit doen we volgens hem door het delen van verhalen en mythen, maar ook door het maken van afspraken. (bijvoorbeeld dat geld waarde heeft.) Doordat wij collectief aan een verhaal kunnen houden zijn wij anders dan dieren. Hij legt ook uit dat er in de neurowetenschap geen bewijs is voor een ziel en dat er hierom niet uit kan worden gegaan van een inherente betekenis van je leven maar ook eigenlijk niet van een vrije wil, waardoor je eigen betekenis maken ook geen zin meer heeft. Hierdoor beargumenteert hij dat wij eigenlijk niet meer zouden zijn dan biologische algoritmen waar wat in komt en vervolgens een output uit komt rollen. Hij eindigt het boek met een open vraag in betrekking tot AI, als AI ook een algoritme zonder ziel is, op welk punt is AI dan interessanter voor bedrijven dan mensen?",
+  learned: "Mijn meest interessante inzicht uit dit boek is het stuk over de collectieve verhalen. Hij beargumenteert dat wij hierdoor beter zijn geworden dan de rest van de natuur omdat wij een betekenis aan dingen hebben gegeven. Ik vind dit een interessant en relevant onderwerp in de huidige maarschappij, steeds meer jongeren voelen zicht doelloos en zijn op zoek naar betekenis. Ook Verteld hij dat er door deze gedeelde waarden en verhalen een sociale cohesie is ontstaan, dit merkte ik ook op kleine schaal terug in ons groepje. Door kleine gedeelde ervaringen te hebben met elkaar bouw je sneller een band op en doordat je comfortabel bent met elkaar ben je ook productiever en meer gemotiveerd.",
+  applied: "Ik heb dit niet zo zeer toegepast, meer waargenomen. Het lijkt me lastig om dit bewust toe te passen, dan ga je naar een soort social engineering toe en daar heb ik dan weet niet echt verstand van en daar gaat het boek ook niet over.",
   futureUse:
-    "[Placeholder] Hoe ga je dit in de toekomst gebruiken...",
+    "Ik denk dat het beste wat ik kan doen is om veel te praten met toekomstige groepsgenoten om zo een sociale band te krijgen? Verder kan ik dit boek niet echt inzetten voor positieve doeleinden die niet een existentiele crisis bevorderen.",
 }

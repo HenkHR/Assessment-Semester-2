@@ -37,7 +37,7 @@ export const EMPTY_PROJECT: GroupProjectData = {
 export const groupProjectsData: GroupProjectData[] = [
   {
     title: "StageLink",
-    description: "AI student-stage matching systeem met een focus op AI geletterdheid",
+    description: "AI student-stage matching systeem met een focus op AI geletterdheid - Wat heb ik geleerd tijdens de ontwikkeling van dit project? Wat ging goed en wat ging minder?",
     pros: [...PLACEHOLDER_PROS_STAGELINK],
     cons: [...PLACEHOLDER_CONS_STAGELINK],
     goalsReflection:
@@ -45,7 +45,7 @@ export const groupProjectsData: GroupProjectData[] = [
   },
   {
     title: "RAUW",
-    description: "Platform voor buurtbewoners en handhavers om hun buurt te verbeteren door middel van contact en terugkoppeling",
+    description: "Platform voor buurtbewoners en handhavers om hun buurt te verbeteren door middel van contact en terugkoppeling - Wat heb ik geleerd tijdens de ontwikkeling van dit project? Wat ging goed en wat ging minder?",
     pros: [...PLACEHOLDER_PROS_RAUW],
     cons: [...PLACEHOLDER_CONS_RAUW],
     goalsReflection:
