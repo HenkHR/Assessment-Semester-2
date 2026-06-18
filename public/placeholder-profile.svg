@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none" role="img" aria-label="Profielafbeelding placeholder">
-  <rect width="200" height="200" fill="#27272a" rx="8"/>
-  <circle cx="100" cy="78" r="36" fill="#52525b"/>
-  <path d="M40 172c8-32 32-48 60-48s52 16 60 48" fill="#52525b"/>
+  <rect width="200" height="200" fill="oklch(0.17 0.02 250)" rx="8"/>
+  <circle cx="100" cy="78" r="36" fill="oklch(0.775 0.02 250)"/>
+  <path d="M40 172c8-32 32-48 60-48s52 16 60 48" fill="oklch(0.775 0.02 250)"/>
 </svg>
