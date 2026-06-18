@@ -1,3 +1,7 @@
+# Requires GitHub Pages enabled once in repo settings:
+# https://github.com/HenkHR/Assessment-Semester-2/settings/pages
+# → Build and deployment → Source: GitHub Actions
+
 name: Deploy to GitHub Pages
 
 on:
@@ -12,7 +16,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
+  group: pages
   cancel-in-progress: false
 
 jobs:
@@ -25,8 +29,8 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
-          cache: "npm"
+          node-version: "22"
+          cache: npm
 
       - name: Install dependencies
         run: npm ci
@@ -36,13 +40,10 @@ jobs:
         env:
           GITHUB_PAGES: "true"
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: "./dist"
+          path: ./dist
 
   deploy:
     environment:
