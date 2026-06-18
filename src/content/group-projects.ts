@@ -13,15 +13,16 @@ const PLACEHOLDER_CONS_STAGELINK = [
 ] as const
 
 const PLACEHOLDER_PROS_RAUW = [
-  "[Placeholder] Positief punt 1",
-  "[Placeholder] Positief punt 2",
-  "[Placeholder] Positief punt 3",
+  "Communicatie binnen het team was weer top, groepje was super fijn om mee samen te werken.",
+  "Ik heb nog voor dit project veel geleerd over AI workflows en agents, dit heb ik geprobeerd toe te passen in dit project met veel succes.",
+  "Backend bijna in mijn eentje kunnen bouwen, wat meer tijd over liet voor andere mensen om frontend en documentatie te doen.",
+  "Contact tussen front en backend was uitstekend, de lijntjes waren nu lekker kort omdat je in hetzelfde groepje werkte."
 ] as const
 
 const PLACEHOLDER_CONS_RAUW = [
-  "[Placeholder] Verbeterpunt 1",
-  "[Placeholder] Verbeterpunt 2",
-  "[Placeholder] Verbeterpunt 3",
+  "Er werd weer weinig gedaan met de planning (voornamelijk door mij). Ik had voor de backend geen goede userstories met acceptatiecriteria. Dit heeft me verder niet belemmerd maar was wel iets waar ik aan wilde werken.",
+  "Planning front en backend had wat beter zwart op wit kunnen staan. 1 userstory voor front en backend waardoor beide kanten af moeten zijn had beter geweest.",
+  "Veel ziek/afwezig geweest, een van mijn voornemens uit een eerder TLE was om meer te doen aan de design fase, dit is helaas niet gelukt.",
 ] as const
 
 export const EMPTY_PROJECT: GroupProjectData = {
@@ -48,6 +49,6 @@ export const groupProjectsData: GroupProjectData[] = [
     pros: [...PLACEHOLDER_PROS_RAUW],
     cons: [...PLACEHOLDER_CONS_RAUW],
     goalsReflection:
-      "[Placeholder] Reflectie op eerdere doelen en doelstellingen...",
+      "Na eigenlijk elk voorgaande TLE heb ik mezelf voorgenomen om betere userstories en acceptatiecriteria te schrijven. Dit is wederom weer niet gelukt. Ik spendeer hier te weinig tijd aan tijdens de design fase en tijdens de develop fase ben ik alleen nog maar gefocust op het bouwen van de applicatie. Ook vind ik nog steeds dat ik te weining initiatief toon tijdens de design fase. terwijl dit vorig jaar en tijdens TLE2 een stuk beter ging. nu reageer ik meer op wat anderen voorstellen dan dat ik zelf met geheel nieuwe ideeen kom. Voor bijvoorbeeld PLE is dus weer mijn doelstelling om meer initiatief te tonen tijdens de design fase, alle geleerde methoden zelf te doorlopen en ook om concrete, goed afgebakende userstories en acceptatiecriteria te schrijven voordat ik begin met programmeren.",
   },
 ]
